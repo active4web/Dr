@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="181.552" height="26.648" viewBox="0 0 181.552 26.648">
+  <g id="Line" transform="translate(-898 -2018)">
+    <g id="Line-2" data-name="Line">
+      <g id="Line-3" data-name="Line" transform="translate(81 -5)">
+        <g id="Rectangle_42" data-name="Rectangle 42" transform="translate(877 2032)" fill="#2d3090" stroke="#2d3090" stroke-width="1">
+          <rect width="62" height="8" rx="4" stroke="none"/>
+          <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" fill="none"/>
+        </g>
+      </g>
+      <g id="right" transform="translate(39.208 -0.297)">
+        <g id="Line-4" data-name="Line" transform="matrix(-0.643, 0.766, -0.766, -0.643, 1023.665, 2022.585)">
+          <g id="Rectangle_42-2" data-name="Rectangle 42" fill="#707070" stroke="#707070" stroke-width="1">
+            <rect width="29.189" height="6.672" rx="3.336" stroke="none"/>
+            <rect x="0.5" y="0.5" width="28.189" height="5.672" rx="2.836" fill="none"/>
+          </g>
+        </g>
+        <g id="Line-5" data-name="Line" transform="matrix(-0.643, 0.766, -0.766, -0.643, 1040.344, 2022.585)">
+          <g id="Rectangle_42-3" data-name="Rectangle 42" fill="#707070" stroke="#707070" stroke-width="1">
+            <rect width="29.189" height="6.672" rx="3.336" stroke="none"/>
+            <rect x="0.5" y="0.5" width="28.189" height="5.672" rx="2.836" fill="none"/>
+          </g>
+        </g>
+      </g>
+      <g id="Left" transform="translate(81.422 -0.297)">
+        <g id="Line-6" data-name="Line" transform="translate(838.358 2018.297) rotate(50)">
+          <g id="Rectangle_42-4" data-name="Rectangle 42" transform="translate(0 0)" fill="#707070" stroke="#707070" stroke-width="1">
+            <rect width="29.175" height="6.669" rx="3.334" stroke="none"/>
+            <rect x="0.5" y="0.5" width="28.175" height="5.669" rx="2.834" fill="none"/>
+          </g>
+        </g>
+        <g id="Line-7" data-name="Line" transform="translate(821.686 2018.297) rotate(50)">
+          <g id="Rectangle_42-5" data-name="Rectangle 42" transform="translate(0 0)" fill="#707070" stroke="#707070" stroke-width="1">
+            <rect width="29.175" height="6.669" rx="3.334" stroke="none"/>
+            <rect x="0.5" y="0.5" width="28.175" height="5.669" rx="2.834" fill="none"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

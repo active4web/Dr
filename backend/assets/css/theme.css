@@ -1,0 +1,197 @@
+/*
+Name: 			theme.css
+Written by: 	Okler Themes - (http://www.okler.net)
+Version: 		3.7.0
+*/
+
+/* Responsive */
+@media (max-width: 479px) {
+	body {
+		font-size: 13px;
+	}
+}
+
+/* Home Slider - Revolution Slider */
+.slider-container {
+	background: #171717;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.slider-container ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slider-container .tp-bannershadow {
+	filter: alpha(opacity=20);
+	opacity: 0.20;
+}
+
+.slider-container .top-label {
+	color: #FFF;
+	font-size: 24px;
+	font-weight: 300;
+}
+.img_business:hover{
+
+}
+
+.slider-container .main-label {
+	color: #FFF;
+	font-size: 62px;
+	line-height: 62px;
+	font-weight: 800;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.slider-container .featured-label {
+	color: #FFF;
+	font-size: 52px;
+	line-height: 52px;
+	font-weight: 800;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.slider-container .bottom-label {
+	color: #FFF;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.slider-container .blackboard-text {
+	color: #BAB9BE;
+	font-size: 46px;
+	line-height: 46px;
+	font-family: "Shadows Into Light", cursive;
+	text-transform: uppercase;
+}
+
+.slider-container .tp-caption {
+	opacity: 0;
+}
+
+.slider-container .tp-caption a {
+	color: #FFF;
+}
+
+.slider-container .tp-caption a:hover {
+	color: #FFF;
+}
+
+.slider-container .tp-caption.fullscreenvideo {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0 !important;
+}
+
+.slider-container .tp-caption.fullscreenvideo video {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	position: relative;
+}
+
+.slider-container.light {
+	background-color: #EAEAEA;
+}
+
+.slider-container.light .tp-bannershadow {
+	filter: alpha(opacity=5);
+	opacity: 0.05;
+	top: 0;
+	bottom: auto;
+	z-index: 1000;
+}
+
+.slider-container.light .top-label, .slider-container.light .main-label, .slider-container.light .bottom-label {
+	color: #333;
+}
+
+.slider-container.light .tp-caption a {
+	color: #333;
+}
+
+.slider-container.light .tp-caption a:hover {
+	color: #333;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+	.slider-container {
+		min-height: 0;
+	}
+}
+
+.slider {
+	height: 495px;
+	max-height: 495px;
+	position: relative;
+}
+
+.slider > ul > li > img {
+	visibility: hidden;
+}
+
+.slider > ul > li > .center-caption {
+	left: 0 !important;
+	margin-left: 0 !important;
+	text-align: center;
+	width: 100%;
+}
+
+.slider .tp-bannertimer {
+	display: none;
+}
+
+.slider .main-button {
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.slider-container-fullscreen {
+	height: 2000px;
+	max-height: none;
+}
+
+.slider-container-fullscreen .slider {
+	max-height: none;
+}
+
+/* Home Slider - Nivo Slider */
+.nivo-slider {
+	position: relative;
+}
+
+.nivo-slider .theme-default .nivoSlider {
+	border-radius: 10px 10px 0px 0px;
+	box-shadow: none;
+	margin-top: 10px;
+}
+
+.nivo-slider .theme-default .nivoSlider img {
+	border-radius: 10px 10px 0px 0px;
+}
+
+.nivo-slider .theme-default .nivo-controlNav {
+	margin-top: -72px;
+	position: absolute;
+	z-index: 100;
+	right: 5px;
+	bottom: -17px;
+}
+
+.nivo-slider .theme-default .nivo-caption {
+	padding-left: 20px;
+}
+

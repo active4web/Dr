@@ -1,0 +1,75 @@
+.box4 .box-content{    padding-top: 24%;}
+	.Carousel-wrapper{
+		position: fixed;
+		width: 0;
+		height: 0;
+		transition: 0.3s ease-in-out;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 9999;
+		background-color: rgba(118, 118, 125, 0.9);
+		padding: 4%;
+		opacity: 0;
+		overflow: hidden;
+	}
+	.Carousel-wrapper.active{
+		z-index: 10000;
+		opacity: 1;
+		height: 100%;
+		width: 100%;
+	}
+	.Carousel-wrapper span.Close{
+		color:white;
+		width:40px;
+		height:40px;
+		display:block;
+		cursor: pointer;
+	}
+	
+	.Carousel-wrapper #PopupCarousel{
+		border-radius: 30px;
+    	overflow: hidden;
+	}
+	.Carousel-wrapper .carousel .item img{
+		max-height: 500px;
+    	max-width: 80%;
+		width: auto;
+		margin: 0 auto;
+		border-radius: 10px;
+    	box-shadow: 0px 0px 5px 0px black;
+	}
+	.Carousel-wrapper .carousel .item{
+		padding:5px;
+	}
+	.Carousel-wrapper .carousel .carousel-indicators{
+		position: relative !important;
+		margin-top: 10px !important;
+		width:100% !important;
+		left:0 !important;
+		bottom: 0 !important;
+		text-align: center;
+		padding:0 !important; 
+	}
+	.Carousel-wrapper .carousel .carousel-indicators li{
+		text-indent: 0px !important;
+		width:50px;
+		height:50px;
+		overflow:hidden;
+		border: none;
+		-webkit-filter: brightness(0.4) invert(1);
+		filter: brightness(0.4) invert(1);
+	}
+	.Carousel-wrapper .carousel .carousel-indicators li img{
+		text-indent: 0px !important;
+		width:50px;
+		height:50px;
+	}
+	.Carousel-wrapper .carousel .carousel-indicators li.active{
+		width:50px;
+		height:50px;
+		-webkit-filter: brightness(1);
+		filter: brightness(1);
+    }
+    
+    .Close .fa-window-close{font-size:25px;}

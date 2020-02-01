@@ -1,0 +1,82 @@
+.form-control {
+
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #777;
+    background-color: #f1f1f182;
+    background-image: none;
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+   -webkit-box-shadow: none !important;; 
+     box-shadow:none !important;; 
+    -webkit-transition:none !important;;  
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    /* transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; */
+}
+
+.input-lg, .form-horizontal .form-group-lg .form-control {
+  height: 50px;
+  padding: 10px 10px;
+  font-size: 14px;
+  line-height: 40px;
+  border-radius: 6px;
+  margin-top: 30px;
+
+}
+
+.contact-btn, .model-contact.send a {
+
+    position: unset;
+
+    z-index: 9999;
+
+    bottom: 0%;
+
+    left: 0;
+
+    padding:4% 3%;
+
+    background:#F2961F;
+
+    border: none;
+
+    color: #fff;
+
+    border-radius: 5px;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+}
+
+textarea.input-lg, select[multiple].input-lg {
+    height:120px;
+    resize: none;
+}
+
+
+
+.form-control::-moz-placeholder {
+
+    color: #777;
+
+    opacity: 1;
+
+  }
+
+  .form-control:-ms-input-placeholder {
+
+    color: #777;
+
+  }
+
+  .form-control::-webkit-input-placeholder {
+
+    color: #777;
+
+  }
