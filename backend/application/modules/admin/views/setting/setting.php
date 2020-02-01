@@ -40,6 +40,7 @@ foreach($site_info as $site_info){
     $footer_log=$site_info->footer_log; 
     $footer_log_en=$site_info->footer_log_en; 
     $logo_en=$site_info->logo_en; 
+    $works_hrs=$site_info->works_hrs; 
 	 }
 	
 ?>
@@ -165,6 +166,9 @@ foreach($site_info as $site_info){
 
 
 <div class="form-group">
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'logo_en'),"val")==1){
+?>  
 <div class="col-md-4" style="text-align:center">
 <div class="fileinput fileinput-new" data-provides="fileinput">
 <div class="fileinput-new thumbnail" style="width: 250px; height: 75px;">
@@ -182,7 +186,9 @@ foreach($site_info as $site_info){
 </div>
 </div>
 </div>
-
+<?php
+}if(get_table_filed('backend_option',array('key_txt'=>'footer_logo_ar'),"val")==1){
+?>  
 <div class="col-md-4" style="text-align:center">
 <div class="fileinput fileinput-new" data-provides="fileinput">
 <div class="fileinput-new thumbnail" style="width:32px; height:32px;">
@@ -200,7 +206,9 @@ foreach($site_info as $site_info){
 </div>
 
 </div>
-
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'footer_logo_en'),"val")==1){
+?>  
 <div class="col-md-4" style="text-align:center">
 <div class="fileinput fileinput-new" data-provides="fileinput">
 <div class="fileinput-new thumbnail" style="width:32px; height:32px;">
@@ -218,6 +226,7 @@ foreach($site_info as $site_info){
 </div>
 
 </div>
+<?php }?>
 </div>
 
 <?php
@@ -251,6 +260,20 @@ value="<?php echo $name_site?>" style="text-align:left">
 <input type="text" placeholder="رابط التوظيف" class="form-control" name="job_link" 
 value="<?php echo $job_link?>">
 </div><div class="col-md-2"></div></div>
+
+
+<?php
+ } if(get_table_filed('backend_option',array('key_txt'=>'ar_name'),"val")==1){
+?>              
+
+<div class="form-group">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<span class="help-block">مواعيد العمل</span>
+<input type="text" placeholder="مواعيد العمل" class="form-control" name="works_hrs" 
+value="<?php echo $works_hrs?>">
+</div><div class="col-md-2"></div></div>
+
 
 <?php
 }if(get_table_filed('backend_option',array('key_txt'=>'facebook'),"val")==1){
@@ -395,7 +418,7 @@ data-autosize-on="true" style="overflow: hidden;text-align: left; resize: horizo
 <div class="col-md-2"></div>
 <div class="col-md-8">
 <span class="help-block" style="float:left">Map</span>
-<textarea class="form-control autosizeme" rows="4" placeholder="About in footer"
+<textarea class="form-control autosizeme" rows="4" placeholder="Map"
 data-autosize-on="true" style="overflow: hidden;text-align: left; resize: horizontal; height:80px;" name="map">
 <?=$map?></textarea>															</div>
 <div class="col-md-2"></div>

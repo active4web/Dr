@@ -424,10 +424,11 @@ $about_footer_en=$this->input->post('about_footer_en');
 $key_words=$this->input->post('key_words');
 $meta_desc=$this->input->post('meta_desc');
 $message_email=$this->input->post('message_email');
+$works_hrs=$this->input->post('works_hrs');
 
 
 
-$data = array('map'=>$map,
+$data = array('works_hrs'=>$works_hrs,'map'=>$map,
 'name_site_ar'=>$site_name,'name_site'=>$site_name_en,'keywords'=>$key_words,'description'=>$meta_desc,'email'=>$email,'phone'=>$phone,'facebook'=>$facebook,'twitter'=>$twitter,'instagram'=>$instagram,'address_eng'=>$address_eng,'address_ar'=>$address,'about_footer_ar'=>$about_footer_ar,'about_footer_en'=>$about_footer_en,'job_link'=>$job_link,'message_email'=>$message_email,'linkedin'=>$linkedin);
 $this->db->update('site_infos',$data,array('id'=>1));
 
