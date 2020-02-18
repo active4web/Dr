@@ -7,6 +7,9 @@ use DB;
 use App\Http\Requests;
 use App\Models\SiteinfoModel;
 use App\Models\ServicesModel;
+use App\Models\SettingModel;
+use App\Models\WorkModel;
+
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 
@@ -21,8 +24,11 @@ class ServiceController extends Controller
     {
         //
         $data = DB::table('services')->paginate(20);
+        $works = WorkModel::orderBy('id', 'desc')->where('view','1')->get();
+        
         $site_info = SiteinfoModel::all();
-       return View("pages.services",compact('data','site_info'));
+        $sitesetting = SettingModel::all();
+       return View("pages.services",compact('works','data','sitesetting','site_info'));
     }
 
     /**

@@ -192,25 +192,6 @@ echo count($job_messages);?>"></span>
 </a>
                             </div>
                         </div>
-                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="dashboard-stat2 bordered">
-							<a href="<?= DIR?>admin/clients">
-                                <div class="display">
-                                    <div class="number">
-                                        <h3 class="font-blue-sharp">
-                                            <span data-counter="counterup" data-value="<?php
-$job_messages=$this->db->get_where("clients")->result();
-echo count($job_messages);?>"></span>
-                                        </h3>
-                                        <small style="font-size:13px">معرض الاعمال</small>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="icon-briefcase"></i>
-                                    </div>
-                                </div>
-</a>
-                            </div>
-                        </div>
                         
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                             <div class="dashboard-stat2 bordered">

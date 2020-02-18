@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
-use App\Models\ClientModel;
 use App\Models\SettingModel;
 use App\Models\HomeModel;
 use App\Models\ServicesModel;
 use App\Models\SiteinfoModel;
 use App\Models\NewsModel;
 use App\Models\SliderModel;
-
+use App\Models\TeamModel;
+use App\Models\About_GalleriesModel;
+use App\Models\WhyusModel;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class HomeController extends Controller
@@ -33,21 +34,29 @@ class HomeController extends Controller
     {
 
         $sitesetting = SettingModel::all();
-        $works = ClientModel::orderBy('id', 'desc')->take(10)->get();;
         $home_page = HomeModel::all();
-        $sliders = SliderModel::all();
-        $news = NewsModel::orderBy('id', 'desc')->take(10)->get();;
+        $sliders = SliderModel::orderBy('id', 'desc')->where('view','1')->get();
+        $news = NewsModel::orderBy('id', 'desc')->where('view','1')->take(3)->get();
+        $team= TeamModel::orderBy('id', 'desc')->where('view','1')->take(3)->get();
         $site_info = SiteinfoModel::all();
-        $services = ServicesModel::orderBy('id', 'desc')->take(10)->get();;
-        return View("pages.home",compact('sliders','site_info','home_page','services','news','sitesetting','works'));
+        $services = ServicesModel::orderBy('id', 'desc')->where('view','1')->take(9)->get();
+        $about_gallery_left = About_GalleriesModel::orderBy('id', 'desc')->where([['view', '=', '1'],['location', '=', '1']])->get();
+        $about_gallery_right = About_GalleriesModel::orderBy('id', 'desc')->where([['view', '=', '1'],['location', '=', '0']])->get();
+
+        return View("pages.home",compact('sliders','team','site_info','home_page','services','news','sitesetting','about_gallery_right','about_gallery_left'));
     }
 
     public function about()
     {
 
-        $sitesettings =DB::table("site_settings")->where('id','1')->first();
+        $sitesetting = SettingModel::all();
         $site_info =SiteinfoModel::all();
-        return View("pages.about",compact('site_info','sitesettings'));
+        $Whyus =WhyusModel::orderBy('id', 'desc')->where([['view', '=', '1']])->get();;
+        
+        $about_gallery_left = About_GalleriesModel::orderBy('id', 'desc')->where([['view', '=', '1'],['location', '=', '1']])->get();
+        $about_gallery_right = About_GalleriesModel::orderBy('id', 'desc')->where([['view', '=', '1'],['location', '=', '0']])->get();
+
+        return View("pages.about",compact('Whyus','site_info','sitesetting','about_gallery_right','about_gallery_left'));
     }
 
 

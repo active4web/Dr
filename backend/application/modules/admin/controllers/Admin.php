@@ -425,17 +425,18 @@ $key_words=$this->input->post('key_words');
 $meta_desc=$this->input->post('meta_desc');
 $message_email=$this->input->post('message_email');
 $works_hrs=$this->input->post('works_hrs');
+$closed=$this->input->post('closed');
 
 
 
-$data = array('works_hrs'=>$works_hrs,'map'=>$map,
+$data = array('closed'=>$closed,'works_hrs'=>$works_hrs,'map'=>$map,
 'name_site_ar'=>$site_name,'name_site'=>$site_name_en,'keywords'=>$key_words,'description'=>$meta_desc,'email'=>$email,'phone'=>$phone,'facebook'=>$facebook,'twitter'=>$twitter,'instagram'=>$instagram,'address_eng'=>$address_eng,'address_ar'=>$address,'about_footer_ar'=>$about_footer_ar,'about_footer_en'=>$about_footer_en,'job_link'=>$job_link,'message_email'=>$message_email,'linkedin'=>$linkedin);
 $this->db->update('site_infos',$data,array('id'=>1));
 
 if($_FILES['file']['name']!=""){
 $file=$_FILES['file']['name'];
 $file_name="file";
-$config=get_img_config('site_infos','uploads/site_setting/',$file,$file_name,'logo','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>1),"140","140");
+$config=get_img_config('site_infos','uploads/site_setting/',$file,$file_name,'logo','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>1),"270","80");
   $logo_site = $this->data->get_table_row('site_infos',array(),'logo');
 $this->session->set_userdata(array('logo_site' => $logo_site));
 }
@@ -518,8 +519,13 @@ public function slider_action(){
 
 $slider_title=$this->input->post("slider_title");
 $slider_title_en=$this->input->post("slider_title_en");
+$slider_intro=$this->input->post("slider_intro");
+$slider_intro_eng=$this->input->post("slider_intro_eng");
+
 $data['title'] =$slider_title;
 $data['title_en'] = $slider_title_en;
+$data['slider_intro_eng'] = $slider_intro_eng;
+$data['slider_intro'] = $slider_intro;
 $data['creation_date'] = date("Y-m-d");
 $this->db->insert('sliders',$data);
 $id = $this->db->insert_id();      
@@ -527,7 +533,7 @@ $id = $this->db->insert_id();
 if($_FILES['file']['name']!=""){
 $file=$_FILES['file']['name'];
 $file_name="file";
-$config=get_img_config('sliders','uploads/slider/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"1350","450");
+$config=get_img_config('sliders','uploads/slider/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"1350","700");
 }    
 
 
@@ -591,9 +597,13 @@ $this->load->view('admin/slider/update_slider',$this->data);
 $id=$this->input->post('id');
 $slider_title=$this->input->post("slider_title");
 $slider_title_en=$this->input->post("slider_title_en");
+$slider_intro=$this->input->post("slider_intro");
+$slider_intro_eng=$this->input->post("slider_intro_eng");
+
 $data['title'] =$slider_title;
 $data['title_en'] = $slider_title_en;
-
+$data['slider_intro_eng'] = $slider_intro_eng;
+$data['slider_intro'] = $slider_intro;
 $this->db->update('sliders',$data,array('id'=>$id));
 
 

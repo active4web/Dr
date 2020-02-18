@@ -101,7 +101,9 @@ $curt='about_us';
 															 method="post" enctype="multipart/form-data">
 																<div class="form-body">
 																	
-
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'about_img'),"val")==1){
+?>
 																<div class="form-group">
 														<div class="col-md-3" style="text-align:center"></div>
                                                             <div class="col-md-6" style="text-align:center">
@@ -123,21 +125,25 @@ $curt='about_us';
 
 
 
-
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'about_txt_ar'),"val")==1){
+?>
 <div class="form-group">
 <div class="col-md-12" style="text-align:center">
 <span class="help-block"> المحتوي </span>
 <textarea  name="about_site" id="about_site"><?=$about_site;?>
 </textarea>	
 </div></div>
-
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'about_txt_en'),"val")==1){
+?>
 <div class="form-group">
 <div class="col-md-12" style="text-align:center">
 <span class="help-block">Details</span>
 <textarea  name="about_site_en" id="about_site_en"><?=$about_site_en;?>
 </textarea>
 	</div></div>
-															
+<?php }?>											
 
 
 																	<div class="form-actions">

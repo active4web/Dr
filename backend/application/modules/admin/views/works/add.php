@@ -19,7 +19,7 @@ if (!isset($_SESSION['admin_name']) || $_SESSION['admin_name'] == "") {
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8">
-<title>اضافة عمل</title>
+<title>اضافة</title>
 <?php include("design/inc/header.php"); ?>
 </head>
 <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo page-md">
@@ -83,7 +83,7 @@ if (!isset($_SESSION['admin_name']) || $_SESSION['admin_name'] == "") {
 												<div class="portlet box blue ">
 													<div class="portlet-title">
 														<div class="caption">
-															<i class="fa fa-gift"></i>إضافة عمل</div>
+															<i class="fa fa-gift"></i>إضافة</div>
 													</div>
 
 													<div class="portlet light bordered form-fit">
@@ -96,30 +96,59 @@ if (!isset($_SESSION['admin_name']) || $_SESSION['admin_name'] == "") {
 															<form action="<?php echo $url ?>admin/works/add_action" class="form-horizontal form-bordered" method="post" enctype="multipart/form-data">
 																<div class="form-body">
 										
-										
+
 											          	<div class="form-group">
 																	<div class="col-md-1"></div>
-																	<div class="col-md-10">
+																	<?php
+if(get_table_filed('backend_option',array('key_txt'=>'works_img'),"val")==1){
+?> 
+																	<div class="col-md-5" style="text-align:center">
 																		<div class="fileinput fileinput-new" data-provides="fileinput">
 																						<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;"></div>
 																						<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> </div>
 																						<div>
 																							<span class="btn default btn-file">
-																								<span class="fileinput-new">صورة الخدمة</span>
+																								<span class="fileinput-new">صورة الخدمة الأولى</span>
 																								<span class="fileinput-exists">تغيير</span>
 																								<input type="file" name="file"> </span>
 																								<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
 																						</div>
 																					</div>
 																					<p style="color:red;direction:rtl"></p>
-																		<p style="color:red;direction:rtl">عرض الصورة 450 بيكسل</p>
-																		<p style="direction:rtl">طول الصورة 300 بيكسل</p>
+																		<p style="color:red;direction:rtl">عرض الصورة 1000 بيكسل</p>
+																		<p style="direction:rtl">طول الصورة 600 بيكسل</p>
 																	</div>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_img1'),"val")==1){
+?> 
+																	<div class="col-md-5" style="text-align:center">
+																		<div class="fileinput fileinput-new" data-provides="fileinput">
+																						<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;"></div>
+																						<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> </div>
+																						<div>
+																							<span class="btn default btn-file">
+																								<span class="fileinput-new">صورة الخدمة الثانية</span>
+																								<span class="fileinput-exists">تغيير</span>
+																								<input type="file" name="file1"> </span>
+																								<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
+																						</div>
+																					</div>
+																					<p style="color:red;direction:rtl"></p>
+																		<p style="color:red;direction:rtl">عرض الصورة 1000 بيكسل</p>
+																		<p style="direction:rtl">طول الصورة 600  بيكسل</p>
+																	</div>
+<?php }?>
 																	<div class="col-md-1"></div>
 																	</div>
 
 
-										
+
+
+
+
+																	<?php
+if(get_table_filed('backend_option',array('key_txt'=>'works_title'),"val")==1){
+?> 									
 																	<div class="form-group">
 																		<div class="col-md-1"></div>
 																		<div class="col-md-10">
@@ -129,19 +158,23 @@ if (!isset($_SESSION['admin_name']) || $_SESSION['admin_name'] == "") {
 																		</div>
 																		<div class="col-md-1"></div>
 																	</div>
-																	
+																	<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_title_eng'),"val")==1){
+?> 																	
 
 																	<div class="form-group">
 																	<div class="col-md-1"></div>
 																		<div class="col-md-10">
 																		<span class="help-block" style="float:left"> title</span>
-																			<input name="title_eng" id="title"  type="text" placeholder="title" class="form-control" required style="text-align:left">
+																			<input name="title_eng" id="title"  type="text" placeholder="title" class="form-control" required style="text-align:left;direction:ltr">
 																			
 																		</div>
 																		<div class="col-md-1"></div>
 																	</div>	
 																
-
+																	<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_details'),"val")==1){
+?> 
 																	<div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10" style="text-align:center">
@@ -151,6 +184,9 @@ if (!isset($_SESSION['admin_name']) || $_SESSION['admin_name'] == "") {
 <div class="col-md-1"></div>
 </div>
 
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_details_en'),"val")==1){
+?> 
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10" style="text-align:center">
@@ -161,7 +197,7 @@ if (!isset($_SESSION['admin_name']) || $_SESSION['admin_name'] == "") {
 <div class="col-md-1"></div>
 </div>
 														
-
+<?php }?>
 
 																		
 																

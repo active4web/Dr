@@ -105,9 +105,20 @@ $curt='services';
 														<span></span>
 													</label>
 												</th>
-												<th> عنوان الخدمة </th>
-												<th>Service title</th>
+
+												<?php
+if(get_table_filed('backend_option',array('key_txt'=>'services_img'),"val")==1){
+?> 
 												<th>الصورة</th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'services_title'),"val")==1){
+?> 
+												<th>العنوان</th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'services_title_en'),"val")==1){
+?> 
+												<th>Title</th>
+<?php }?>
 												<th> تاريخ الاضافة </th>
 												<th> الحالة</th>
 												<th> العمليات </th>
@@ -115,12 +126,22 @@ $curt='services';
 										</thead>
 										<tfoot>
 											<tr>
-											    <th> </th>
+											<?php
+if(get_table_filed('backend_option',array('key_txt'=>'services_img'),"val")==1){
+?> 											
+												<th> </th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'services_title'),"val")==1){
+?> 												
+												<th> </th>
+												<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'services_title_en'),"val")==1){
+?> 												
+												<th> </th>
+<?php }?>
 												<th> </th>
 												<th> </th>
-												<th> </th>
-												<th> </th>
-												<th> </th>
+												<th> </th><th> </th>
 											</tr>
 										</tfoot>
 										<tbody>
@@ -149,10 +170,20 @@ $curt='services';
 														<span></span>
 													</label>
 												</td>
-												<td> <?=$data->title_ar;?> </td>
-												<td> <?=$data->title_eng;?> </td>
-												<td><a title="view image" class="example-image-link" href="<?php echo $img;?>" data-lightbox="example-1">الصورة</a></td>
-												<td> <?=$data->creation_date;?> </td>
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'services_img'),"val")==1){
+?> 	
+<td><a title="view image" class="example-image-link" href="<?php echo $img;?>" data-lightbox="example-1">الصورة</a></td>
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_title'),"val")==1){
+?> 	
+	<td><?= mb_substr($data->title_ar,0,30);?></td>
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_title_en'),"val")==1){
+?> 	
+<td><?= mb_substr($data->title_eng,0,30);?></td>
+  <?php }?>
+  												<td> <?=$data->creation_date;?> </td>
 												<td>
 				<a  data-id="<?php echo $data->id;?>" class="btn btn-xs purple table-icon edit" title="change status" style="padding: 1px 0px;">
 												<i class="fa fa-edit" title="edit status"></i>

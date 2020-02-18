@@ -84,9 +84,16 @@ if($_FILES['file']['name']!=""){
 $file=$_FILES['file']['name'];
 $file_name="file";
 //$config=get_img_config('products','uploads/business/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"440","350");
-$config=get_img_config_course('works','uploads/works/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"450","300",$id);
+get_img_config_course('works','uploads/works/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"1000","600",$id);
 }
-		
+    
+if($_FILES['file1']['name']!=""){
+    $file=$_FILES['file1']['name'];
+    $file_name="file1";
+    //$config=get_img_config('products','uploads/business/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"440","350");
+get_img_config_course('works','uploads/works/',$file,$file_name,'img1','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"1000","600",$id);
+    }
+
         $this->session->set_flashdata('msg', 'تمت الإضافة بنجاح');
         redirect(base_url().'admin/works/show','refresh');
     }
@@ -104,9 +111,13 @@ $config=get_img_config_course('works','uploads/works/',$file,$file_name,'img','g
         $check=$this->input->post('check');
 if($id_products!=""){
 $img = get_this('works',['id' => $id_products],'img');
+$img1 = get_this('works',['id' => $id_products],'img1');
 if ($img != "") {
 unlink("uploads/works/$img");
-}   
+} 
+if ($img1 != "") {
+    unlink("uploads/works/$img1");
+    }  
 $ret_value=$this->data->delete_table_row('works',array('id'=>$id_products)); 
         }
      
@@ -115,8 +126,13 @@ $ret_value=$this->data->delete_table_row('works',array('id'=>$id_products));
         $length=count($check);
         for($i=0;$i<$length;$i++){
             $img = get_this('works',['id' => $check[$i]],'img');
+            $img1 = get_this('works',['id' => $check[$i]],'img1');
+
             if ($img != "") {
             unlink("uploads/works/$img");
+            }      
+            if ($img1 != "") {
+            unlink("uploads/works/$img1");
             }               
         $ret_value=$this->data->delete_table_row('works',array('id'=>$check[$i]));    
         }
@@ -164,6 +180,11 @@ $file=$_FILES['file']['name'];
 $file_name="file";
 $config=get_img_config_course('works','uploads/works/',$file,$file_name,'img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"450","300",$id);
 }
+if($_FILES['file1']['name']!=""){
+    $file=$_FILES['file1']['name'];
+    $file_name="file1";
+    $config=get_img_config_course('works','uploads/works/',$file,$file_name,'img1','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>$id),"450","300",$id);
+    }
 $this->session->set_flashdata('msg', 'تم التعديل بنجاح');
 redirect(base_url().'admin/works/show','refresh');
     }

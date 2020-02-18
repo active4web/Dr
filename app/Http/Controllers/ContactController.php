@@ -86,7 +86,7 @@ class ContactController extends Controller
 Mail::send('pages.email', $data, function ($message) use ($title, $email)
        {
            $message->from($email,$title);
-           $message->to('ashraf.m@wisyst.com');
+           $message->to('ashraf.mohammed92@gmail.com');
            $message->subject('رسالة جديدة');
        });
 

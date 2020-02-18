@@ -60,12 +60,12 @@
                                     </a>
                                 </li>
 						
-<li class="nav-item start <?php if($curt=='translate'){echo'active open';}?>">
+<!---<li class="nav-item start <?php if($curt=='translate'){echo'active open';}?>">
 <a href="<?=$url;?>admin/translate" class="nav-link ">
 <i class="icon-note"></i>
 <span class="title">الترجمة</span>
 <span class="selected"></span>
-</a></li>
+</a></li>--->
 							
                                   
                             </ul>
@@ -81,22 +81,28 @@
 <span class="selected"></span>
 </a>
 </li>
-				
-<li class="nav-item start <?php if($curt=="slider"||$curt=='homepage'||$curt=='intro'||$curt=='introductory'){echo'active open';}?>">
+<?php
+ if(get_table_filed('backend_option',array('key_txt'=>'home'),"val")==1){
+?>		
+<li class="nav-item start <?php if($curt=="home_video"||$curt=="slider"||$curt=='homepage'||$curt=='intro'||$curt=='introductory'){echo'active open';}?>">
 <a href="javascript:;" class="nav-link nav-toggle">
 <i class="icon-home"></i>
 <span class="title">الصفحة الرئيسية</span>
 <span class="arrow"></span>
 </a>
 <ul class="sub-menu">
-
+<?php
+ if(get_table_filed('backend_option',array('key_txt'=>'slider_home'),"val")==1){
+?>
 <li class="nav-item <?php if($curt=='slider'){echo'active open';}?>">
 <a href="<?=base_url()?>admin/slider_home" class="nav-link ">
 <i class="fa fa-photo"></i>
 <span class="title">الاسليدر</span>
 </a>
 </li>
-
+<?php
+ } if(get_table_filed('backend_option',array('key_txt'=>'home_background'),"val")==1){
+?>
 
 <li class="nav-item <?php if($curt=='introductory'){echo'active open';}?>">
 <a href="<?=base_url()?>admin/pages/home_background" class="nav-link ">
@@ -104,19 +110,30 @@
 <span class="title">البنر التعريفى</span>
 </a>
 </li>
-
-
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'home_video'),"val")==1){
+?>
+<li class="nav-item <?php if($curt=='home_video'){echo'active open';}?>">
+<a href="<?=base_url()?>admin/pages/home_video" class="nav-link ">
+<i class="icon-note"></i>
+<span class="title">الفيديو</span>
+</a>
+</li>
+<?php
+ } if(get_table_filed('backend_option',array('key_txt'=>'home_intro'),"val")==1){
+?>
 <li class="nav-item <?php if($curt=='intro'){echo'active open';}?>">
 <a href="<?=base_url()?>admin/pages/home_intro" class="nav-link ">
 <i class="fa fa-comment"></i>
 <span class="title">المقدمة</span>
 </a>
 </li>
-
+<?php }?>
 </ul>
 </li>
+ <?php }?>
 				
-<li class="nav-item start <?php if($curt=='goals'||$curt=='about_us'||$curt=='vision'||$curt=='mission'||$curt=='banner_about'){echo'active open';}?>">
+<li class="nav-item start <?php if($curt=='our_works'||$curt=='why_best'||$curt=='about_gallery'||$curt=='goals'||$curt=='about_us'||$curt=='vision'||$curt=='mission'||$curt=='banner_about'){echo'active open';}?>">
 <a href="javascript:;" class="nav-link nav-toggle">
 <i class="icon-info"></i>
 <span class="title">من نحن</span>
@@ -143,6 +160,24 @@ if(get_table_filed('backend_option',array('key_txt'=>'banner_about'),"val")==1){
 </li>
 
 <?php
+}if(get_table_filed('backend_option',array('key_txt'=>'about_gallery'),"val")==1){
+?>
+<li class="nav-item <?php if($curt=='about_gallery'){echo'active open';}?>">
+<a href="<?=base_url()?>admin/about/about_gallery" class="nav-link ">
+<i class="icon-note"></i>
+<span class="title">معرض الصور</span>
+</a>
+</li>
+<?php
+}if(get_table_filed('backend_option',array('key_txt'=>'why_best'),"val")==1){
+?>
+<li class="nav-item <?php if($curt=='why_best'){echo'active open';}?>">
+<a href="<?=base_url()?>admin/about/why_best" class="nav-link ">
+<i class="icon-note"></i>
+<span class="title">لماذا نحن</span>
+</a>
+</li>
+<?php
 }if(get_table_filed('backend_option',array('key_txt'=>'vision'),"val")==1){
 ?>
 <li class="nav-item <?php if($curt=='vision'){echo'active open';}?>">
@@ -168,6 +203,17 @@ if(get_table_filed('backend_option',array('key_txt'=>'banner_about'),"val")==1){
 <a href="<?=base_url()?>admin/about/goals" class="nav-link ">
 <i class="icon-note"></i>
 <span class="title">الأهداف</span>
+</a>
+</li>
+
+
+<?php
+}if(get_table_filed('backend_option',array('key_txt'=>'our_Works'),"val")==1){
+?>
+<li class="nav-item <?php if($curt=='our_works'){echo'active open';}?>">
+<a href="<?=base_url()?>admin/about/our_works" class="nav-link ">
+<i class="icon-note"></i>
+<span class="title">طريقة العمل</span>
 </a>
 </li>
 <?php }?>
@@ -198,7 +244,18 @@ if(get_table_filed('backend_option',array('key_txt'=>'banner_services'),"val")==
 </a>
 </li> 	
 <?php }?>
-<li class="nav-item  <?php if($curt=='business'){echo'active open';}?>">
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'services_intro'),"val")==1){
+?>
+<li class="nav-item <?php if($curt=='banner_services'){echo'active open';}?>">
+<a href="<?=base_url()?>admin/services/intro" class="nav-link ">
+<i class="fa fa-photo"></i>
+<span class="title">مقدمة الخدمات</span>
+</a>
+</li> 	
+<?php }?>
+
+<li class="nav-item  <?php if($curt=='services'){echo'active open';}?>">
 <a href="<?=base_url()?>admin/services/" class="nav-link ">
 <i class="icon-briefcase"></i>
 <span class="title">الخدمات</span>
@@ -245,7 +302,7 @@ if(get_table_filed('backend_option',array('key_txt'=>'works'),"val")==1){
         <li class="nav-item start <?php if($curt=='works'||$curt=="banner_works"){echo'active open';}?>">
         <a href="javascript:;" class="nav-link nav-toggle">
         <i class="icon-briefcase"></i>
-        <span class="title">الاخبار</span>
+        <span class="title">اعمالنا</span>
 
         <span class="arrow"></span>
         </a>
@@ -263,7 +320,7 @@ if(get_table_filed('backend_option',array('key_txt'=>'banner_works'),"val")==1){
         <li class="nav-item  <?php if($curt=='works'){echo'active open';}?>">
         <a href="<?=base_url()?>admin/works/" class="nav-link ">
         <i class="icon-briefcase"></i>
-        <span class="title">الاخبار </span>
+        <span class="title">اعمالنا </span>
         </a>
         </li>     
         </ul>
@@ -274,7 +331,7 @@ if(get_table_filed('backend_option',array('key_txt'=>'events'),"val")==1){
 ?>
         <li class="nav-item start <?php if($curt=='events'||$curt=="banner_events"){echo'active open';}?>">
 	<a href="javascript:;" class="nav-link nav-toggle">
-            <i class="fa fa-notes"></i>
+            <i class="fa fa-sticky-note"></i>
 			<span class="title">الاخبار</span>
 			  
             <span class="arrow"></span>
@@ -298,10 +355,20 @@ if(get_table_filed('backend_option',array('key_txt'=>'banner_events'),"val")==1)
      </li>     
      </ul>
            </li>                       
-<?php }?>        
+<?php }?>  
+
  
- 					
-                    
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'team'),"val")==1){
+?>
+<li class="nav-item start <?php if($curt=='team'){echo'active open';}?>">
+<a href="<?=$url;?>admin/team/" class="nav-link ">
+<i class="icon-users"></i>
+<span class="title">فريق العمل</span>
+<span class="selected"></span>
+</a>
+</li>			
+<?php }?>                
       <li class="nav-item start <?php if($curt=='messages_banner'||$curt=='messages'||$curt=='request_job'){echo'active open';}?>">
 	<a href="javascript:;" class="nav-link nav-toggle">
             <i class="icon-envelope"></i>

@@ -105,9 +105,20 @@ $curt='events';
 														<span></span>
 													</label>
 												</th>
-												<th> العنوان  </th>
+												<?php
+if(get_table_filed('backend_option',array('key_txt'=>'events_img'),"val")==1){
+?> 
+												<th>الصورة الأولى</th>
+											
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'events_title'),"val")==1){
+?> 
+												<th>العنوان</th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'events_title_en'),"val")==1){
+?> 
 												<th>Title</th>
-												<th>الصورة</th>
+<?php }?>
 												<th> تاريخ الاضافة </th>
 												<th> الحالة</th>
 												<th> العمليات </th>
@@ -115,8 +126,20 @@ $curt='events';
 										</thead>
 										<tfoot>
 											<tr>
-											    <th> </th>
+											<?php
+if(get_table_filed('backend_option',array('key_txt'=>'events_img'),"val")==1){
+?> 
 												<th> </th>
+											
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'events_title'),"val")==1){
+?> 
+												<th></th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'events_title_en'),"val")==1){
+?> 
+												<th></th>
+<?php }?>
 												<th> </th>
 												<th> </th>
 												<th> </th>
@@ -149,9 +172,20 @@ $curt='events';
 														<span></span>
 													</label>
 												</td>
-												<td> <?=$data->title;?> </td>
-												<td> <?=$data->title_en;?> </td>
+												<?php
+if(get_table_filed('backend_option',array('key_txt'=>'events_img'),"val")==1){
+?> 
 												<td><a title="view image" class="example-image-link" href="<?php echo $img;?>" data-lightbox="example-1">الصورة</a></td>
+
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'events_title'),"val")==1){
+?> 
+<td> <?=$data->title;?> </td>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'events_title_en'),"val")==1){
+?> 
+												<td> <?=$data->title_en;?> </td>
+<?php }?>			
 												<td> <?=$data->creation_date;?> </td>
 												<td>
 				<a  data-id="<?php echo $data->id;?>" class="btn btn-xs purple table-icon edit" title="change status" style="padding: 1px 0px;">

@@ -133,7 +133,8 @@ function get_img_size($key){
  $ci= & get_instance();
  $ci->load->library('image_lib');
    $config['source_image'] = $url;
-  $config['create_thumb'] = TRUE;
+   $config['new_image'] = $url;
+  $config['create_thumb'] = false;
   $config['maintain_ratio'] = TRUE;
   $config['quality'] = '90%';
   $config['width']     =$width;

@@ -97,7 +97,9 @@ foreach($data as $data)
 															 method="post"   enctype="multipart/form-data">
 			 <input name="id"  value="<?= $data->id;?>"  type="hidden">												    
 																<div class="form-body">
-																	
+																<?php
+if(get_table_filed('backend_option',array('key_txt'=>'services_img'),"val")==1){
+?> 																								
 
 															<div class="form-group">
 															<div class="col-md-1"></div>
@@ -121,7 +123,9 @@ foreach($data as $data)
 															<div class="col-md-1"></div>
 
 															</div>		
-
+															<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_title'),"val")==1){
+?> 
 																	<div class="form-group">
 																	<div class="col-md-1"></div>
 																		<div class="col-md-10">
@@ -131,7 +135,9 @@ foreach($data as $data)
 																		</div>
 																		<div class="col-md-1"></div>
 																	</div>																	
-																	
+																	<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_title_en'),"val")==1){
+?> 																																		
 																	<div class="form-group">
 																	<div class="col-md-1"></div>
 																		<div class="col-md-10">
@@ -141,7 +147,9 @@ foreach($data as $data)
 																		</div>
 																		<div class="col-md-1"></div>
 																	</div>			
-																	
+																	<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'small_desc'),"val")==1){
+?> 																																	
 																	<div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10">
@@ -151,7 +159,9 @@ data-autosize-on="true" style="overflow: hidden;    text-align: right; height:60
 </textarea>															</div>
 <div class="col-md-1"></div>
 </div>
-
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'small_desc_en'),"val")==1){
+?> 	
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10">
@@ -162,7 +172,9 @@ data-autosize-on="true" style="overflow: hidden;text-align: left; height:60px;re
 </div>
 <div class="col-md-1"></div>
 </div>
-
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_txt'),"val")==1){
+?> 	
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10" style="text-align:center">
@@ -172,7 +184,9 @@ data-autosize-on="true" style="overflow: hidden;text-align: left; height:60px;re
 </div>
 <div class="col-md-1"></div>
 </div>
-
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_txt_en'),"val")==1){
+?> 	
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10" style="text-align:center">
@@ -184,7 +198,9 @@ data-autosize-on="true" style="overflow: hidden;text-align: left; height:60px;re
 <div class="col-md-1"></div>
 </div>
 
-
+<?php
+  } 
+?> 	
 																	
 																	<div class="form-actions">
 																		<div class="row">
@@ -231,14 +247,20 @@ $(document).ready(function(e) {
     });
 });
 </script>
-
-
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'services_txt'),"val")==1){
+?> 	
 <script type="text/javascript">
-	//CKEDITOR.replace('description');
 	var editor = CKEDITOR.replace( 'contents' );
+	CKFinder.setupCKEditor( editor );
+</script>
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_txt_en'),"val")==1){
+?> 	
+<script type="text/javascript">
 	var editor = CKEDITOR.replace( 'contents_en' );
 	CKFinder.setupCKEditor( editor );
 </script>
-
+<?php }?>
 </body>
 </html>

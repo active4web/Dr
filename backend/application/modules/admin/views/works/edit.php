@@ -59,7 +59,7 @@ $curt='works';
 							<i class="fa fa-circle"></i>
 						</li>
 						<li>
-							<a href="<?=$url.'admin/business/show/';?>">الأعمال</a>
+							<a href="<?=$url.'admin/works/show/';?>">الأعمال</a>
 							<i class="fa fa-circle"></i>
 						</li>
 						<li>
@@ -104,6 +104,7 @@ $curt='works';
 																$details_en = $result->details_en;
 																
 																$img = $result->img;
+																$img1 = $result->img1;
 															}
 														?>
 														<div class="portlet-body form">
@@ -112,8 +113,11 @@ $curt='works';
 																<div class="form-body">
 																<input type="hidden" name="id" value="<?=$id;?>">
 																	<div class="form-group">
-																	<div class="col-md-2"></div>
-																	<div class="col-md-10">
+																	<div class="col-md-1"></div>
+																	<?php
+ if(get_table_filed('backend_option',array('key_txt'=>'works_img'),"val")==1){
+?> 
+																	<div class="col-md-5">
 																		<div class="fileinput fileinput-new" data-provides="fileinput">
 												<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
 																						<img src="<?=base_url();?>uploads/works/<?php echo $img?>" alt="" />
@@ -121,14 +125,44 @@ $curt='works';
 												<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> </div>
 																						<div>
 																							<span class="btn default btn-file">
-																								<span class="fileinput-new">صورة العمل</span>
+																								<span class="fileinput-new">صورة الخدمة الأولى</span>
 																								<span class="fileinput-exists">تغيير</span>
 																								<input type="file" name="file"> </span>
 																							<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
 																						</div>
 																					</div>
+																					<p style="color:red;direction:rtl"></p>
+																		<p style="color:red;direction:rtl">عرض الصورة 1000 بيكسل</p>
+																		<p style="direction:rtl">طول الصورة 600  بيكسل</p>
 																		</div>
+
+																		<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_img1'),"val")==1){
+?> 
+																	<div class="col-md-5" style="text-align:center">
+																		<div class="fileinput fileinput-new" data-provides="fileinput">
+																		<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+																						<img src="<?=base_url();?>uploads/works/<?php echo $img1?>" alt="" />
+																						</div>																					
+																			<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> </div>
+																						<div>
+																							<span class="btn default btn-file">
+																								<span class="fileinput-new">صورة الخدمة الثانية</span>
+																								<span class="fileinput-exists">تغيير</span>
+																								<input type="file" name="file1"> </span>
+																								<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> حذف </a>
+																						</div>
+																					</div>
+																					<p style="color:red;direction:rtl"></p>
+																		<p style="color:red;direction:rtl">عرض الصورة 1000 بيكسل</p>
+																		<p style="direction:rtl">طول الصورة 600  بيكسل</p>
 																	</div>
+<?php }?>
+<div class="col-md-1"></div>
+
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'works_title'),"val")==1){
+?> 																										</div>
 																	
 														
 																	
@@ -143,17 +177,21 @@ $curt='works';
 																		</div>
 																		<div class="col-md-1"></div>
 																	</div>
-
+																	<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_title_eng'),"val")==1){
+?> 																	
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10">
 <span class="help-block" style="float:left"> title</span>
-<input name="title_eng" id="title" value="<?=$title_en;?>"  type="text"  placeholder="title" class="form-control" required style="text-align:left">
+<input name="title_eng" id="title" value="<?=$title_en;?>"  type="text"  placeholder="title" class="form-control" required style="text-align:left;direction:ltr">
 
 </div>
 <div class="col-md-1"></div>
 </div>	
-
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_details'),"val")==1){
+?> 
 
 <div class="form-group">
 <div class="col-md-1"></div>
@@ -163,7 +201,9 @@ $curt='works';
 </div>
 <div class="col-md-1"></div>
 </div>
-																	
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_details_en'),"val")==1){
+?> 																	
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10" style="text-align:center">
@@ -172,7 +212,7 @@ $curt='works';
 </div>
 <div class="col-md-1"></div>
 </div>															
-																
+<?php }?>														
 																	
 <div class="form-actions">
 <div class="row">

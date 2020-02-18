@@ -127,8 +127,18 @@ if(get_table_filed('backend_option',array('key_txt'=>'slider_img'),"val")==1){
 <div class="form-group">
 <div class="col-md-2"></div>
 <div class="col-md-8">
-<span class="help-block">عنوان تعريفى</span>
-<input type="text" placeholder="عنوان تعريفى" class="form-control" name="slider_title"  value="<?= $silder_data->title?>">
+<span class="help-block">عنوان </span>
+<input type="text" placeholder="عنوان" class="form-control" name="slider_title"  value="<?= $silder_data->title?>">
+</div><div class="col-md-2"></div></div>
+<?php
+}if(get_table_filed('backend_option',array('key_txt'=>'slider_intro'),"val")==1){
+?>
+<div class="form-group">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<span class="help-block">التفاصيل</span>
+<textarea name="slider_intro" id="slider_intro"  style="height:50px; resize:none" class="form-control"><?= $silder_data->slider_intro?></textarea>
+
 </div><div class="col-md-2"></div></div>
 <?php
 }if(get_table_filed('backend_option',array('key_txt'=>'slider_title_en'),"val")==1){
@@ -136,10 +146,19 @@ if(get_table_filed('backend_option',array('key_txt'=>'slider_img'),"val")==1){
 <div class="form-group">
 <div class="col-md-2"></div>
 <div class="col-md-8">
-<span class="help-block" style="float:left;">Intro title</span>
-<input type="text" placeholder="Intro title" class="form-control" name="slider_title_en"  style="text-align:left"  value="<?= $silder_data->title_en?>">
+<span class="help-block" style="float:left;">Title</span>
+<input type="text" placeholder="Title" class="form-control" name="slider_title_en"  style="text-align:left;direction:ltr"  value="<?= $silder_data->title_en?>">
 </div><div class="col-md-2"></div></div>
-<?php }?>                                                      
+<?php
+}if(get_table_filed('backend_option',array('key_txt'=>'slider_intro_eng'),"val")==1){
+?>
+<div class="form-group">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<span class="help-block" style="float:left;">Details</span>
+<textarea name="slider_intro_eng" id="slider_intro_eng" placeholder="Details" style="height:50px; resize:none;text-align:left;direction:ltr" class="form-control"><?= $silder_data->slider_intro_eng?></textarea>
+</div><div class="col-md-2"></div></div>
+<?php }?>                                                   
 
 
                                                         

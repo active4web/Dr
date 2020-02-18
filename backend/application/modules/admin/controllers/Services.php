@@ -33,6 +33,32 @@ class Services extends MX_Controller
 		$data['site_info']= $this->data->get_table_data('site_setting');
 		$this->load->view("admin/services/banner",$data); 
     }
+    public function intro(){
+		$data['site_info']= $this->data->get_table_data('site_settings');
+		$this->load->view("admin/services/intro",$data); 
+    }
+
+    
+    
+    public function edit_intro(){
+    
+        $about_site=$this->input->post('about_site');
+        $about_site_en=$this->input->post('about_site_en');
+        $data['services_intro_en'] = $about_site_en;
+        $data['services_intro'] = $about_site;
+        $this->db->update('site_settings',$data,array("id"=>1));
+        
+        if($_FILES['file']['name']!=""){
+        $file=$_FILES['file']['name'];
+        $file_name="file";
+        $config=get_img_config('site_settings','uploads/site_setting/',$file,$file_name,'services_img','gif|jpg|png|jpeg',600000,600000,600000,array('id'=>1),"600","400");
+        }
+                
+        $this->session->set_flashdata('msg', 'تم التعديل بنجاحٍ');
+        $this->session->mark_as_flash('msg');
+        redirect('/admin/services/intro');	
+        
+        }
     
     public function about_banner(){
     
@@ -102,7 +128,7 @@ $config=get_img_config_course('services','uploads/services/',$file,$file_name,'i
         if($id_services!=""){
             $img = get_this('services',['id' => $id_services],'img');
             if ($img != "") {
-            unlink("../uploads/services/$img");
+            unlink("uploads/services/$img");
             }
          
         $ret_value=$this->data->delete_table_row('services',array('id'=>$id_services)); 
@@ -114,7 +140,7 @@ $config=get_img_config_course('services','uploads/services/',$file,$file_name,'i
         for($i=0;$i<$length;$i++){
             $img = get_this('services',['id' => $check[$i]],'img');
             if ($img != "") {
-            unlink("../uploads/services/$img");
+            unlink("uploads/services/$img");
             }
         $ret_value=$this->data->delete_table_row('services',array('id'=>$check[$i]));    
         }

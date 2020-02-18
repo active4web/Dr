@@ -89,7 +89,7 @@ $curt='works';
 										</div>
 									</div>
 									<?php if(!empty($results)){?>
-									<form action="<?=$url?>admin/business/delete" method="POST" id="form">
+									<form action="<?=$url?>admin/works/delete" method="POST" id="form">
 									<table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1_2">
 										<thead>
 											<tr>
@@ -99,20 +99,48 @@ $curt='works';
 														<span></span>
 													</label>
 												</th>
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'works_img'),"val")==1){
+?> 
+												<th>الصورة الأولى</th>
+												<?php
+}if(get_table_filed('backend_option',array('key_txt'=>'works_img1'),"val")==1){
+?> 
+												<th>الصورة الثانية</th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_title'),"val")==1){
+?> 
 												<th>العنوان</th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_title_eng'),"val")==1){
+?> 
 												<th>Title</th>
-										     	<th>التاريخ</th>
-												<th>الصورة</th>
+<?php }?>
+
+												<th>تاريخ الأضافة</th>
 												<th>الحالة</th>
 												<th> العمليات </th>
 											</tr>
 										</thead>
 										<tfoot>
 											<tr>
+											<?php
+if(get_table_filed('backend_option',array('key_txt'=>'works_img'),"val")==1){
+?> 
+												<th></th>
+												<?php
+}if(get_table_filed('backend_option',array('key_txt'=>'works_img1'),"val")==1){
+?> 
 												<th> </th>
-												<th> </th>
-												<th> </th>
-												<th> </th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_title'),"val")==1){
+?> 
+												<th></th>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_title_eng'),"val")==1){
+?> 
+												<th></th>
+<?php }?>
 												<th> </th>
 												<th> </th>
 												<th> </th>
@@ -136,6 +164,8 @@ $curt='works';
 												}
 												$image=$data->img;
 												$img=$url."uploads/works/".$image; 
+												$image1=$data->img1;
+												$img1=$url."uploads/works/".$image1; 
                                         ?>
 											<tr class="odd gradeX">
 												<td>
@@ -144,10 +174,24 @@ $curt='works';
 														<span></span>
 													</label>
 												</td>
-												<td> <?=$data->title;?> </td>
-												<td> <?=$data->title_en;?> </td>
+												<?php
+if(get_table_filed('backend_option',array('key_txt'=>'works_img'),"val")==1){
+?> 	
+<td><a title="view image" class="example-image-link" href="<?php echo $img;?>" data-lightbox="example-1">الصورة</a></td>
+<?php
+} if(get_table_filed('backend_option',array('key_txt'=>'works_img1'),"val")==1){
+?> 	
+<td><a title="view image" class="example-image-link" href="<?php echo $img1;?>" data-lightbox="example-1">الصورة</a></td>
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'works_title'),"val")==1){
+?> 	
+	<td><?= mb_substr($data->title,0,30);?></td>
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'works_title_eng'),"val")==1){
+?> 	
+<td><?= mb_substr($data->title_en,0,30);?></td>
+  <?php }?>		
 												<td> <?=date(date("Y-d-m"),strtotime($data->creation_date));?> </td>
-									<td><a title="view image" class="example-image-link" href="<?php echo $img;?>" data-lightbox="example-1"><?=lang('view');?></a></td>
 
 											  <td>
 												<a data-id="<?=$data->id;?>" class="btn btn-xs purple edit" style="padding: 1px 0px;"><i class="fa fa-edit"></i>

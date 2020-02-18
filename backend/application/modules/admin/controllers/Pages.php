@@ -65,8 +65,12 @@ class Pages extends MX_Controller
 public function introductory(){
 	$data['site_info']= $this->data->get_table_data('home_pages');
 	$this->load->view("admin/home/steps",$data); 
-	}
-
+    }
+    public function home_video(){
+        $data['site_info']= $this->data->get_table_data('home_pages');
+        $this->load->view("admin/home/home_video",$data); 
+        }
+    
 
 public function home_intro(){
 	$data['site_info']= $this->data->get_table_data('home_pages');
@@ -74,7 +78,17 @@ public function home_intro(){
 	}
 
 
+    
 
+public function edit_video(){
+$home_video=$this->input->post('home_video');
+$data = array('home_video'=>$home_video);
+$this->db->update('home_pages',$data,array('id'=>1));
+$this->session->set_flashdata('msg', 'تم التعديل بنجاحٍ');
+$this->session->mark_as_flash('msg');
+redirect('/admin/pages/home_video');	
+
+}
 public function edit_steps(){
 $title=$this->input->post('title');
 $title_en=$this->input->post('title_en');

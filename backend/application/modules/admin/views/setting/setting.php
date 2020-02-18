@@ -41,6 +41,7 @@ foreach($site_info as $site_info){
     $footer_log_en=$site_info->footer_log_en; 
     $logo_en=$site_info->logo_en; 
     $works_hrs=$site_info->works_hrs; 
+    $closed=$site_info->closed; 
 	 }
 	
 ?>
@@ -263,7 +264,7 @@ value="<?php echo $job_link?>">
 
 
 <?php
- } if(get_table_filed('backend_option',array('key_txt'=>'ar_name'),"val")==1){
+ } if(get_table_filed('backend_option',array('key_txt'=>'works_hrs'),"val")==1){
 ?>              
 
 <div class="form-group">
@@ -272,6 +273,18 @@ value="<?php echo $job_link?>">
 <span class="help-block">مواعيد العمل</span>
 <input type="text" placeholder="مواعيد العمل" class="form-control" name="works_hrs" 
 value="<?php echo $works_hrs?>">
+</div><div class="col-md-2"></div></div>
+
+<?php
+ } if(get_table_filed('backend_option',array('key_txt'=>'closed'),"val")==1){
+?>              
+
+<div class="form-group">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<span class="help-block">مواعيد الاغلق</span>
+<input type="text" placeholder="مواعيد الاغلق" class="form-control" name="closed" 
+value="<?php echo $closed?>">
 </div><div class="col-md-2"></div></div>
 
 

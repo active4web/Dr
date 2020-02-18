@@ -104,7 +104,7 @@ if(get_table_filed('backend_option',array('key_txt'=>'slider_img'),"val")==1){
 																			<div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px;height: 150px;"> </div>
 																			<div>
 																				<span class="btn default btn-file">
-																					<span class="fileinput-new">الأسليدر(العرض:1350 بيكسل و الطول:450 بيكسل)</span>
+																					<span class="fileinput-new">الأسليدر(العرض:1350 بيكسل و الطول:700 بيكسل)</span>
 																					<span class="fileinput-exists">تغير</span>
 																					<input type="file" name="file"></span>
 																				<a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">حذف </a>
@@ -123,15 +123,36 @@ if(get_table_filed('backend_option',array('key_txt'=>'slider_img'),"val")==1){
 <input type="text" placeholder="عنوان تعريفى" class="form-control" name="slider_title" >
 </div><div class="col-md-2"></div></div>
 <?php
+}if(get_table_filed('backend_option',array('key_txt'=>'slider_intro'),"val")==1){
+?>
+<div class="form-group">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<span class="help-block">التفاصيل</span>
+<textarea name="slider_intro" id="slider_intro"  style="height:50px; resize:none" class="form-control">التفاصيل</textarea>
+
+</div><div class="col-md-2"></div></div>
+
+<?php
 }if(get_table_filed('backend_option',array('key_txt'=>'slider_title_en'),"val")==1){
 ?>
 <div class="form-group">
 <div class="col-md-2"></div>
 <div class="col-md-8">
-<span class="help-block" style="float:left;">Intro title</span>
-<input type="text" placeholder="Intro title" class="form-control" name="slider_title_en"  style="text-align:left">
+<span class="help-block" style="float:left;">Title</span>
+<input type="text" placeholder="Title" class="form-control" name="slider_title_en"  style="text-align:left;direction:ltr">
+</div><div class="col-md-2"></div></div>
+<?php
+}if(get_table_filed('backend_option',array('key_txt'=>'slider_intro_eng'),"val")==1){
+?>
+<div class="form-group">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<span class="help-block" style="float:left;">Details</span>
+<textarea name="slider_intro_eng" id="slider_intro_eng" placeholder="Details" style="height:50px; resize:none;text-align:left;direction:ltr" class="form-control"></textarea>
 </div><div class="col-md-2"></div></div>
 <?php }?>
+
 
                                                         
 														

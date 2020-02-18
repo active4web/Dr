@@ -96,7 +96,9 @@ $curt='services';
 															 method="post"   enctype="multipart/form-data">
 															    
 																<div class="form-body">
-																	
+																<?php
+if(get_table_filed('backend_option',array('key_txt'=>'services_img'),"val")==1){
+?> 													
 
 															<div class="form-group">
 															<div class="col-md-1"></div>
@@ -115,7 +117,9 @@ $curt='services';
 															</div></div>
 															<div class="col-md-1"></div>
 															</div>		
-
+															<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_title'),"val")==1){
+?> 
 																	<div class="form-group">
 																	<div class="col-md-1"></div>
 																		<div class="col-md-10">
@@ -125,18 +129,22 @@ $curt='services';
 																		</div>
 																		<div class="col-md-1"></div>
 																	</div>																	
-																	
+																	<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_title_en'),"val")==1){
+?> 																		
 																	<div class="form-group">
 																	<div class="col-md-1"></div>
 																		<div class="col-md-10">
 																		<span class="help-block" style="float:left">Service title</span>
-																			<input name="title_eng" id="title"  type="text" placeholder="Service title" class="form-control" required style="text-align:left">
+																			<input name="title_eng" id="title"  type="text" placeholder="Service title" class="form-control" required style="text-align:left;direction:ltr">
 																			
 																		</div>
 																		<div class="col-md-1"></div>
 																	</div>			
-																	
-																	<div class="form-group">
+																	<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'small_desc'),"val")==1){
+?> 																		
+<div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10">
 <span class="help-block" style="float:right">وصف مختصر عن الخدمة (أقصى 120 حرفا)</span>
@@ -145,18 +153,22 @@ data-autosize-on="true" style="overflow: hidden;    text-align: right; height:60
 </textarea>															</div>
 <div class="col-md-1"></div>
 </div>
-
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'small_desc_en'),"val")==1){
+?> 	
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10">
 <span class="help-block" style="float:left;direction:ltr">Small description about service (max 120 character)</span>
 <textarea class="form-control autosizeme" maxlength='120'  placeholder="Small description about service"
-data-autosize-on="true" style="overflow: hidden;text-align: left; height:60px;resize:none" name="small_desc_en" required>
+data-autosize-on="true" style="overflow: hidden;text-align: left; height:60px;resize:none;direction:ltr" name="small_desc_en" required>
 </textarea>	
 </div>
 <div class="col-md-1"></div>
 </div>
-
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_txt'),"val")==1){
+?> 	
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10" style="text-align:center">
@@ -165,7 +177,9 @@ data-autosize-on="true" style="overflow: hidden;text-align: left; height:60px;re
 </div>
 <div class="col-md-1"></div>
 </div>
-
+<?php
+  } if(get_table_filed('backend_option',array('key_txt'=>'services_txt_en'),"val")==1){
+?> 	
 <div class="form-group">
 <div class="col-md-1"></div>
 <div class="col-md-10" style="text-align:center">
@@ -176,7 +190,9 @@ data-autosize-on="true" style="overflow: hidden;text-align: left; height:60px;re
 <div class="col-md-1"></div>
 </div>
 
-
+<?php
+  } 
+?> 	
 																	
 																	<div class="form-actions">
 																		<div class="row">
