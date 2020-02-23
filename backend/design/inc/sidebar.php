@@ -368,6 +368,17 @@ if(get_table_filed('backend_option',array('key_txt'=>'team'),"val")==1){
 <span class="selected"></span>
 </a>
 </li>			
+<?php }?>          
+<?php
+if(get_table_filed('backend_option',array('key_txt'=>'reservation'),"val")==1){
+?>
+<li class="nav-item start <?php if($curt=='reservations'){echo'active open';}?>">
+<a href="<?=$url;?>admin/reservation/" class="nav-link ">
+<i class="fa fa-ticket"></i>
+<span class="title">الحجوزات</span>
+<span class="selected"></span>
+</a>
+</li>			
 <?php }?>                
       <li class="nav-item start <?php if($curt=='messages_banner'||$curt=='messages'||$curt=='request_job'){echo'active open';}?>">
 	<a href="javascript:;" class="nav-link nav-toggle">

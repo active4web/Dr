@@ -63,7 +63,7 @@ foreach($site_info as $sitesetting)
 
                             <!-- Headr Button start -->
                             <div class="header_btn">
-                                <div class="popup"><a href="#step1" data-effect="mfp-zoom-in" class="step1 btn_white">Book Now</a></div>
+                                <div class="popup"><a href="#step1" data-effect="mfp-zoom-in" class="step1 btn_white booknow">Book Now</a></div>
                             </div>
                             <!-- Headr Button end -->
 

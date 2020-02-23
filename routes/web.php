@@ -27,6 +27,9 @@ Route::get('/news-details/{id}', 'EventsController@show');
 Route::get('/contact','ContactController@index');
 Route::get('/contact_action','ContactController@store');
 Route::post('/contact_action','ContactController@store');
+Route::post('/reservation_action','ContactController@reservation');
+Route::get('/reservation_action','ContactController@reservation');
+
 
 //Route::post('/contact', ['as'=>'contactus.store','uses'=>'ContactController@store']);
 //Route::get('contact', 'ContactController@contactUSPost');

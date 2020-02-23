@@ -12,6 +12,7 @@ use DB;
 use App\Http\Requests;
 use App\Models\SiteinfoModel;
 use App\Models\MessagesModel;
+use App\Models\ReservationsModel;
 use App\Models\SettingModel;
 
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -94,6 +95,21 @@ Mail::send('pages.email', $data, function ($message) use ($title, $email)
 
 
 
+    }
+
+
+
+    public function reservation(Request $request){
+        
+        $data=$request->all();
+       $contact_message =ReservationsModel::create([
+           'name' => $request->get('yourname1'),
+           'dentist' => $request->get('drname_id'),
+           'reason' => $request->get('reason_id'),
+           'phone' => $request->get('yourphone1'),
+           'date_time' => $request->get('posDate')."  ".$request->get('radio_tim'),
+       ]);
+       echo 1;
     }
 
     /**

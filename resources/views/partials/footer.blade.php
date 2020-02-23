@@ -68,6 +68,9 @@ foreach($site_info as $sitesetting)
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<input type="hidden" name="drname_id" id="drname_id">
 	<input type="hidden" name="reason_id" id="reason_id">
+    <input type="hidden" name="radio_tim" id="radio_tim">
+    <input type="hidden" name="yourname1" id="yourname1">
+    <input type="hidden" name="yourphone1" id="yourphone1">
         <!-- Popup Step 1 -->
         <div id="step1" class="white-popup mfp-with-anim mfp-hide order_popup">
             <div class="popup_content">
@@ -416,24 +419,22 @@ foreach($site_info as $sitesetting)
 
                     <div class="row almost_select">
                         <div class="col-3">
-                            <div class="almost_select_img radius_right">
-                                <img class="lozad is-loaded" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/dentist_photo_4l.png" data-srcset="img/dentist_photo_4l.png, img/dentist_photo_4l@2x.png 2x" alt="DiDent">
-                            </div>
+                            
                             <div class="almost_details">
-                                <div class="almost_doc_position">Dentist</div>
-                                <div class="almost_doc_name">Dr. Jennifer Wilson</div>
+                                <div class="almost_title">Dentist</div>
+                                <div class="almost_reason"><span class="step_info1"></span></div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="almost_details">
                                 <div class="almost_title">Reason</div>
-                                <div class="almost_reason">Check-up and Cleaning</div>
+                                <div class="almost_reason"><span class="step_info2"></span></div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="almost_details">
                                 <div class="almost_title">Date & Time</div>
-                                <div class="almost_date">April 19 at 05:00 pm</div>
+                                <div class="almost_date"><span class="step_info3"></span></div>
                             </div>
                         </div>
                     </div>
@@ -446,11 +447,11 @@ foreach($site_info as $sitesetting)
                             <div class="row row-15">
                                 <div class="col-2">
                                     <div class="leable">Full Name</div>
-                                    <input class="posName" type="text" name="yourphone">
+                                    <input class="posName" type="text" name="yourname" id="yourname">
                                 </div>
                                 <div class="col-2">
                                     <div class="leable">Phone</div>
-                                    <input class="posTel" type="text" name="yourphone">
+                                    <input class="posTel" type="text" name="yourphone" id="yourphone">
                                 </div>
                             </div>
 
